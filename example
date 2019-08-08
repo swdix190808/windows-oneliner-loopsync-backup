@@ -1,0 +1,34 @@
+# this is not a program per se ...
+# you copy this example into a dos terminal or 
+# from the Run prompt
+# create two alias for x and y
+# alias means assign a drive letter to a path
+
+cmd /C "FOR /L %N IN DO robocopy x:\ y:\ /e & timeout 600"
+
+# (do a loop) (this program) (source/desination) (wait 10 min)
+# See Windows help if you do not understand assigning a 
+# drive letter to a path or network share
+# this can be done with file verification programs as well.
+# this technique combines two public known tools
+# the example given is safe, it does not use MIR which can
+# delete files (see robocopy help file)
+# XP users replace & timeout with & your.vbs
+# VBS one liner in a file:  wacript.sleep 600
+# (yes that worked for me without calling an object)
+
+# Advantage:  no mysterious methods or subroutines to audit
+# no libraries vulnerable to errors, nothing to install
+# Microsoft will break this if it ever become a problem.
+# free logging you can have another alias to 
+# an encrypted file system and redirect output there
+# in plain text (> z:\logfile.txt)
+# Basic command line skills and understanding required
+# this method uses two known free tools
+# no excuse why any government should loose all their data
+# the command line must stay open or make this a service
+# You must run this as admin or configure UAC 
+# Casual home users can create a bat file with this line 
+# then just right click and run as admin
+# it will send a copy of your data where you set the alias
+
