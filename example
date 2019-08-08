@@ -4,7 +4,7 @@
 # create two alias for x and y
 # alias means assign a drive letter to a path
 
-cmd /C "FOR /L %N IN DO robocopy x:\ y:\ /e & timeout 600"
+cmd /C "FOR /L %N IN DO robocopy x:\ y:\ /e >> z:\mybackup_log.txt & timeout 600"
 
 # (do a loop) (this program) (source/desination) (wait 10 min)
 # See Windows help if you do not understand assigning a 
